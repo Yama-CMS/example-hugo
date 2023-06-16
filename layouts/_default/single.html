@@ -1,0 +1,9 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.excerpt }} 
+        <p>{{ . }}</p>
+    {{ end }}
+    {{ with .Content }}  
+        <div class="content">{{ . }}</div>
+    {{ end }}
+{{ end }}

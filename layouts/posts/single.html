@@ -1,0 +1,15 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ if isset .Params.media.formats "desktop" }}
+        <img 
+            class="media-desktop"
+            {{ printf "src=%q" .Params.media.formats.desktop.url | safeHTMLAttr }}
+            alt="{{ .Params.media.alt }}"
+        />
+    {{ else }}
+        <img class="media-desktop" src="https://placehold.co/800?text=No+media+found&font=roboto" alt ="Default image" />
+    {{ end }}
+    {{ with .Content }} 
+        <div class="content">{{ . }}</div>
+    {{ end }}
+{{ end }}

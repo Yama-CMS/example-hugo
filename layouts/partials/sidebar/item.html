@@ -1,0 +1,17 @@
+<li>
+    {{ if isset .Params.media.formats "thumb" }}
+        <img
+            class="thumb"
+            {{ printf "src=%q" .Params.media.formats.thumb.url | safeHTMLAttr }}
+            alt="{{ .Params.media.alt }}"
+        />
+    {{ else }}
+        <img
+            class="thumb"
+            src="https://placehold.co/40x40"
+            alt ="Default image"
+        />
+    {{ end }}
+    <a href={{ .Permalink }}>{{ .Title }}</a>
+</li>
+

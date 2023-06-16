@@ -1,0 +1,7 @@
+baseURL: /
+languageCode: en-us
+title: Hugo Template Public
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

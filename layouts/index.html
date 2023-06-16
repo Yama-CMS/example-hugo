@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}
+        <div class="content">{{ . }}</div>
+    {{ end }}
+    <section class="wrapper posts">
+        <h2>Listing des posts</h2>
+        {{ partial "home/list.html" . }}
+    </section>
+{{ end }}

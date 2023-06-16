@@ -1,0 +1,8 @@
+<nav>
+    <ul>
+        {{ partial "sidebar/item" site.GetPage "/" }}
+        {{ range where site.RegularPages "Section" "" }}
+            {{ partial "sidebar/item" . }}
+        {{ end }}
+    </ul>
+</nav>

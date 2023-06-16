@@ -1,0 +1,5 @@
+<ul>
+    {{ range where site.RegularPages "Section" "posts" }}
+        {{ partial "home/item.html" . }}
+    {{ end }}
+</ul>
