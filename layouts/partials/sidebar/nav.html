@@ -1,7 +1,7 @@
 <nav>
     <ul>
         {{ partial "sidebar/item" site.GetPage "/" }}
-        {{ range where site.RegularPages "Section" "" }}
+        {{ range where site.RegularPages "Section" "pages" }}
             {{ partial "sidebar/item" . }}
         {{ end }}
     </ul>
