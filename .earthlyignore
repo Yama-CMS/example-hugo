@@ -1,0 +1,7 @@
+.git/
+.gitignore
+
+Earthfile
+.earthlyignore
+
+public/
