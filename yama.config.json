@@ -1,0 +1,75 @@
+{
+  "name": "Hugo starter example",
+  "presets": {
+    "configuration": {
+      "output": {
+        "homepage": {
+          "pathname": "content/_index.md"
+        }
+      },
+      "frontmatter": [
+        {"from": "permalink", "to": "url"}
+      ]
+    },
+    "taxonomies": [
+      {
+        "code": "category",
+        "configuration": {
+          "output": {
+            "directory": "data",
+            "filename": "{code}.json"
+          }
+        },
+        "translations": {
+          "fr_FR": {
+            "name": "Catégorie"
+          }
+        }
+      }
+    ],
+    "contents": [
+      {
+        "code": "pages",
+        "configuration": {
+          "output": {
+            "directory": "content/{code}",
+            "filename": "{slug}.{locale|language}.md"
+          },
+          "thumbor": {
+            "formats": [
+              {"code": "thumb", "width": 200, "height": 0}
+            ]
+          }
+        },
+        "translations": {
+          "fr_FR": {
+            "label": "Page",
+            "permalink": "/{locale|language}/{slug}"
+          }
+        }
+      },
+      {
+        "code": "posts",
+        "taxonomies": ["category"],
+        "configuration": {
+          "output": {
+            "directory": "content/{code}",
+            "filename": "{date|Y-m-d}-{slug}.{locale|language}.md"
+          },
+          "thumbor": {
+            "formats": [
+              {"code": "thumb", "width": 200, "height": 0},
+              {"code": "desktop", "width": 1024, "height": 0}
+            ]
+          }
+        },
+        "translations": {
+          "fr_FR": {
+            "label": "Post",
+            "permalink": "/{locale|language}/{date|Y-m-d}/{slug}"
+          }
+        }
+      }
+    ]
+  }
+}
